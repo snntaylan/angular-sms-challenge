@@ -3,10 +3,24 @@
   padding: 40px;
 }
 
+.filter-section {
+  padding: 10px;
+  margin: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .date-input{
+    margin: 5px;
+  }
+}
+
 .col-header {
   cursor: pointer;
 }
-.color-cell{
+
+.color-cell {
   width: 100%;
   height: 100%;
 }

@@ -20,8 +20,12 @@ export class SmsService {
     private http: HttpClient,
   ) { }
 
-  getSmsList(currentPage: number, sortType: string, sortField: string) {
-    const queryParams = `?pagesize=${this.pageSize}&page=${currentPage}&sorttype=${sortType}&sortfield=${sortField}`;
+  getSmsList(currentPage: number, sortType: string, sortField: string, startDate?: Date, endDate?: Date) {
+    let queryParams = `?pagesize=${this.pageSize}&page=${currentPage}&sorttype=${sortType}&sortfield=${sortField}`;
+
+    if (!!startDate && !!endDate && startDate < endDate) {
+      queryParams += `&startDate=${startDate}&endDate=${endDate}`;
+    }
 
     console.log(queryParams);
 

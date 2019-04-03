@@ -1,3 +1,17 @@
+  <div class="filter-section">
+    <div class="date-input">
+      <input [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1" placeholder="Start Date"
+        (dateTimeChange)="onStartDateChange($event)">
+      <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+    </div>
+    <div class="date-input">
+      <input [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2" placeholder="End Date"
+        (dateTimeChange)="onEndDateChange($event)">
+      <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="filterDate()">Filter Date</button>
+  </div>
+
   <div class="sms-list">
     <table class="table">
       <thead>
@@ -22,8 +36,8 @@
           <td>{{sms.city}}</td>
           <td>{{sms.status}}</td>
           <td>{{sms.price | currency}}</td>
-          <td>{{sms.start_date | date}}</td>
-          <td>{{sms.end_date | date}}</td>
+          <td>{{sms.start_date | date :'dd/MM/yyyy'}}</td>
+          <td>{{sms.end_date | date :'dd/MM/yyyy'}}</td>
           <td>
             <div class="color-cell" [ngStyle]="{'color': sms.color}">
               {{ sms.color}}
