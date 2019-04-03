@@ -9,6 +9,8 @@ Super simple Angular app with 1 module and 2 routes.
 git clone https://github.com/snntaylan/angular-sms-challenge 
 cd angular-sms-challenge 
 npm install
+cd client
+ng serve
 ```
 
 ## Development server
